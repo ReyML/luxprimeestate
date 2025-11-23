@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Sale Opportunities | LuxPrimeEstate</title>
+    <meta name="description"
+        content="Exclusive access to pre-sale luxury properties before they hit the market. Secure your investment early.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#f5f5f5',
+                        accent: '#c5a059',
+                        'accent-dark': '#b08d48',
+                        'text-primary': '#333333',
+                        'text-secondary': '#666666',
+                        'dark-bg': '#0f0f0f',
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body class="font-body text-text-primary antialiased overflow-x-hidden">
+
+    <!-- Header (Reused) -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm"
+        id="main-header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-sm group-hover:bg-accent transition-colors duration-300">
+                    <span class="font-heading font-bold text-xl">L</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Home</a>
+                <div class="relative group">
+                    <a href="properties.html"
+                        class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider flex items-center gap-1">
+                        Properties <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">All Properties</a>
+                        <a href="secondary-market-properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Secondary Market</a>
+                        <a href="off-plan-properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Off-Plan</a>
+                    </div>
+                </div>
+                <a href="pre-sale.html" class="text-sm font-medium text-accent uppercase tracking-wider">Pre-Sale</a>
+                <a href="added-value.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Added
+                    Value</a>
+                <a href="blog.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Blog</a>
+                <a href="contact.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Contact</a>
+            </nav>
+
+            <button class="md:hidden text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden"
+            id="mobile-menu">
+            <div class="flex flex-col h-full pt-24 px-6 gap-6">
+                <a href="index.html" class="text-2xl font-heading font-bold text-primary">Home</a>
+                <a href="properties.html" class="text-2xl font-heading font-bold text-primary">Properties</a>
+                <a href="secondary-market-properties.html" class="text-lg font-body text-text-secondary pl-4">Secondary
+                    Market</a>
+                <a href="off-plan-properties.html" class="text-lg font-body text-text-secondary pl-4">Off-Plan</a>
+                <a href="pre-sale.html" class="text-2xl font-heading font-bold text-accent">Pre-Sale</a>
+                <a href="added-value.html" class="text-2xl font-heading font-bold text-primary">Added Value</a>
+                <a href="blog.html" class="text-2xl font-heading font-bold text-primary">Blog</a>
+                <a href="contact.html" class="text-2xl font-heading font-bold text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+                alt="Luxury Pre-Sale" class="w-full h-full object-cover" id="hero-bg">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">Pre-Sale Access</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+                Be the first to discover and secure exclusive properties before they reach the open market.
+            </p>
+            <a href="#register"
+                class="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-sm uppercase tracking-widest text-sm font-bold transition-all duration-300 transform hover:-translate-y-1"
+                data-aos="fade-up" data-aos-delay="200">
+                Get Early Access
+            </a>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="font-heading text-4xl font-bold text-primary mb-6">Why Invest in Pre-Sale?</h2>
+                    <p class="text-text-secondary mb-8 leading-relaxed text-lg">
+                        Investing in pre-sale properties grants you exclusive access to the lowest entry prices and the
+                        highest potential for capital appreciation. Secure your legacy before the world even knows it
+                        exists.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-6 group">
+                            <div
+                                class="w-14 h-14 bg-secondary flex items-center justify-center rounded-full text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="trending-up" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                                    Maximize Capital Appreciation</h3>
+                                <p class="text-text-secondary text-sm leading-relaxed">Lock in today's prices and watch
+                                    your asset's value grow significantly throughout the construction phase until
+                                    handover.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div
+                                class="w-14 h-14 bg-secondary flex items-center justify-center rounded-full text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="layout-template" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                                    Priority Unit Selection</h3>
+                                <p class="text-text-secondary text-sm leading-relaxed">Gain first refusal on the most
+                                    coveted units—penthouses, corner units, and those with the most breathtaking views.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div
+                                class="w-14 h-14 bg-secondary flex items-center justify-center rounded-full text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="wallet" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                                    Flexible Payment Plans</h3>
+                                <p class="text-text-secondary text-sm leading-relaxed">Enjoy interest-free,
+                                    developer-direct payment plans spread over the construction period, optimizing your
+                                    cash flow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-[600px]" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+                        alt="Modern Architecture" class="w-full h-full object-cover rounded-sm shadow-2xl">
+                    <div
+                        class="absolute -bottom-10 -left-10 bg-white p-10 shadow-2xl max-w-xs hidden md:block border-l-4 border-accent">
+                        <p class="font-heading text-5xl font-bold text-accent mb-2">20%+</p>
+                        <p class="text-text-secondary text-sm uppercase tracking-wider font-bold">Average ROI on
+                            Completion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Pre-Sale Opportunities -->
+    <section class="py-24 bg-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-primary mb-4" data-aos="fade-up">Upcoming Launches</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Be the first to
+                    know about these highly anticipated developments.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-500" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop"
+                            alt="The Pinnacle"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-wider shadow-md">
+                            Launching Q4 2025</div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-6 right-8 bg-white p-3 rounded-full shadow-lg">
+                            <i data-lucide="star" class="w-6 h-6 text-accent fill-current"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-2 group-hover:text-accent transition-colors">The
+                            Pinnacle</h3>
+                        <p class="text-text-secondary text-sm mb-4 uppercase tracking-wide">Downtown District</p>
+                        <p class="text-text-primary mb-8 line-clamp-3 leading-relaxed">A masterpiece of modern living
+                            featuring sky villas and panoramic city views. The ultimate address for the elite.</p>
+                        <button
+                            class="w-full py-3 border border-accent text-accent font-bold uppercase text-xs tracking-widest hover:bg-accent hover:text-white transition-all duration-300">Register
+                            Interest</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-500" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?q=80&w=2073&auto=format&fit=crop"
+                            alt="Azure Bay"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-wider shadow-md">
+                            Launching Q1 2026</div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-6 right-8 bg-white p-3 rounded-full shadow-lg">
+                            <i data-lucide="waves" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-2 group-hover:text-accent transition-colors">Azure
+                            Bay</h3>
+                        <p class="text-text-secondary text-sm mb-4 uppercase tracking-wide">Dubai Harbour</p>
+                        <p class="text-text-primary mb-8 line-clamp-3 leading-relaxed">Exclusive waterfront residences
+                            with private marina access and resort-style amenities. Live the Riviera lifestyle.</p>
+                        <button
+                            class="w-full py-3 border border-accent text-accent font-bold uppercase text-xs tracking-widest hover:bg-accent hover:text-white transition-all duration-300">Register
+                            Interest</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white shadow-lg hover:shadow-2xl transition-all duration-500" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-3ad19e6e67af?q=80&w=2075&auto=format&fit=crop"
+                            alt="Verde Heights"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-wider shadow-md">
+                            Launching Q2 2026</div>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-6 right-8 bg-white p-3 rounded-full shadow-lg">
+                            <i data-lucide="leaf" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-2 group-hover:text-accent transition-colors">Verde
+                            Heights</h3>
+                        <p class="text-text-secondary text-sm mb-4 uppercase tracking-wide">Dubai Hills Estate</p>
+                        <p class="text-text-primary mb-8 line-clamp-3 leading-relaxed">Sustainable luxury living
+                            integrated with nature, featuring vertical gardens and smart home technology.</p>
+                        <button
+                            class="w-full py-3 border border-accent text-accent font-bold uppercase text-xs tracking-widest hover:bg-accent hover:text-white transition-all duration-300">Register
+                            Interest</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="py-24 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                alt="Background" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h2 class="font-heading text-4xl font-bold mb-4" data-aos="fade-up">Join the Priority List</h2>
+                <p class="text-gray-400 text-lg" data-aos="fade-up" data-aos-delay="100">Register your interest to
+                    receive
+                    exclusive floor plans, pricing, and launch invitations before the general public.</p>
+            </div>
+
+            <form
+                class="max-w-2xl mx-auto space-y-6 bg-white/5 p-8 md:p-12 backdrop-blur-sm border border-white/10 rounded-sm"
+                data-aos="fade-up" data-aos-delay="200">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="relative group">
+                        <input type="text" id="firstName" required
+                            class="peer w-full bg-transparent border-b border-gray-500 py-3 text-white focus:border-accent focus:outline-none transition-colors placeholder-transparent">
+                        <label for="firstName"
+                            class="absolute left-0 -top-3.5 text-gray-400 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-accent peer-focus:text-xs">First
+                            Name</label>
+                    </div>
+                    <div class="relative group">
+                        <input type="text" id="lastName" required
+                            class="peer w-full bg-transparent border-b border-gray-500 py-3 text-white focus:border-accent focus:outline-none transition-colors placeholder-transparent">
+                        <label for="lastName"
+                            class="absolute left-0 -top-3.5 text-gray-400 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-accent peer-focus:text-xs">Last
+                            Name</label>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <input type="email" id="email" required
+                        class="peer w-full bg-transparent border-b border-gray-500 py-3 text-white focus:border-accent focus:outline-none transition-colors placeholder-transparent">
+                    <label for="email"
+                        class="absolute left-0 -top-3.5 text-gray-400 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-accent peer-focus:text-xs">Email
+                        Address</label>
+                </div>
+                <div class="relative group">
+                    <input type="tel" id="phone" required
+                        class="peer w-full bg-transparent border-b border-gray-500 py-3 text-white focus:border-accent focus:outline-none transition-colors placeholder-transparent">
+                    <label for="phone"
+                        class="absolute left-0 -top-3.5 text-gray-400 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-accent peer-focus:text-xs">Phone
+                        Number</label>
+                </div>
+                <div class="relative group">
+                    <select id="interest"
+                        class="peer w-full bg-transparent border-b border-gray-500 py-3 text-white focus:border-accent focus:outline-none transition-colors">
+                        <option value="" class="text-primary bg-white">Select Preference</option>
+                        <option value="investment" class="text-primary bg-white">Investment</option>
+                        <option value="residence" class="text-primary bg-white">Primary Residence</option>
+                        <option value="vacation" class="text-primary bg-white">Vacation Home</option>
+                    </select>
+                    <label for="interest"
+                        class="absolute left-0 -top-3.5 text-gray-400 text-xs transition-all peer-focus:text-accent">Interest
+                        Type</label>
+                </div>
+                <button type="submit"
+                    class="w-full bg-accent hover:bg-accent-dark text-white py-4 uppercase tracking-widest font-bold transition-all duration-300 shadow-lg hover:shadow-accent/20 mt-8">
+                    Register Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer (Reused) -->
+    <footer class="bg-primary text-white pt-20 pb-10 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="w-12 h-12 bg-white text-primary flex items-center justify-center rounded-sm mb-6">
+                        <span class="font-heading font-bold text-2xl">L</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Redefining luxury real estate with an unwavering commitment to excellence, privacy, and
+                        personalized service.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-heading text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="properties.html" class="hover:text-accent transition-colors">Properties</a></li>
+                        <li><a href="secondary-market-properties.html"
+                                class="hover:text-accent transition-colors">Secondary Market</a></li>
+                        <li><a href="off-plan-properties.html" class="hover:text-accent transition-colors">Off-Plan</a>
+                        </li>
+                        <li><a href="pre-sale.html" class="hover:text-accent transition-colors">Pre-Sale</a></li>
+                        <li><a href="added-value.html" class="hover:text-accent transition-colors">Added Value</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-xl font-bold mb-6">Contact</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 mt-1 text-accent"></i>
+                            <span>123 Luxury Lane, <br>Beverly Hills, CA 90210</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-accent"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
+                            <span>info@luxprimeestate.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-xl font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for exclusive property updates.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your Email"
+                            class="bg-white/10 border border-white/20 p-3 text-white focus:border-accent focus:outline-none">
+                        <button
+                            class="bg-accent hover:bg-accent-dark text-white py-3 uppercase tracking-widest text-sm font-bold transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2024 LuxPrimeEstate. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors"><i data-lucide="instagram"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors"><i data-lucide="facebook"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors"><i data-lucide="linkedin"
+                            class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            const icon = mobileMenu.classList.contains('translate-x-full') ? 'menu' : 'x';
+            mobileMenuBtn.innerHTML = `<i data-lucide="${icon}" class="w-6 h-6"></i>`;
+            lucide.createIcons();
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Parallax Effect
+        gsap.to("#hero-bg", {
+            yPercent: 30,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurea at Rashid Yachts & Marina | LuxPrimeEstate</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link href="./dist/output.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-primary text-text-primary font-body antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 bg-primary/95 backdrop-blur-md border-b border-accent/10">
+        <div class="container mx-auto px-8 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="./assets/icon.png" alt="LuxPrimeEstate Logo" class="h-12 w-auto">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Home</a>
+                <div class="relative group">
+                    <a href="properties.html"
+                        class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider flex items-center gap-1">
+                        Properties <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">All Properties</a>
+                        <a href="secondary-market-properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Secondary Market</a>
+                        <a href="off-plan-properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Off-Plan</a>
+                    </div>
+                </div>
+                <a href="pre-sale.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Pre-Sale</a>
+                <a href="added-value.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Added
+                    Value</a>
+                <a href="blog.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Blog</a>
+                <a href="contact.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-text-primary hover:text-accent transition-colors">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden"
+            id="mobile-menu">
+            <div class="flex flex-col h-full pt-24 px-6 gap-6">
+                <a href="index.html" class="text-2xl font-heading font-bold text-primary">Home</a>
+                <a href="properties.html" class="text-2xl font-heading font-bold text-primary">Properties</a>
+                <a href="secondary-market-properties.html" class="text-lg font-body text-text-secondary pl-4">Secondary
+                    Market</a>
+                <a href="off-plan-properties.html" class="text-lg font-body text-text-secondary pl-4">Off-Plan</a>
+                <a href="pre-sale.html" class="text-2xl font-heading font-bold text-primary">Pre-Sale</a>
+                <a href="added-value.html" class="text-2xl font-heading font-bold text-primary">Added Value</a>
+                <a href="blog.html" class="text-2xl font-heading font-bold text-primary">Blog</a>
+                <a href="contact.html" class="text-2xl font-heading font-bold text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Property Hero -->
+    <section class="relative h-[70vh] w-full">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+            class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="absolute bottom-0 left-0 w-full p-8 md:p-20 bg-gradient-to-t from-black/80 to-transparent">
+            <div class="container mx-auto">
+                <span
+                    class="bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest shadow-md mb-4 inline-block">New
+                    Launch</span>
+                <h1 class="text-4xl md:text-6xl font-heading text-white mb-4">Aurea at Rashid Yachts & Marina</h1>
+                <div class="flex flex-wrap items-center gap-6 text-white/90 text-lg">
+                    <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
+                        Dubai, UAE</span>
+                    <span class="flex items-center gap-2"><i data-lucide="home" class="w-5 h-5 text-accent"></i>
+                        Apartment</span>
+                    <span class="flex items-center gap-2"><i data-lucide="dollar-sign" class="w-5 h-5 text-accent"></i>
+                        From AED 2.31M</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Grid -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <div class="mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-heading text-text-primary mb-6">Description</h2>
+                    <p class="text-text-secondary leading-relaxed mb-6">
+                        Experience the epitome of waterfront living at Aurea, located in the prestigious Rashid Yachts &
+                        Marina. This exclusive development offers a collection of premium 1, 2, and 3-bedroom apartments
+                        with breathtaking views of the marina and the Dubai skyline.
+                    </p>
+                    <p class="text-text-secondary leading-relaxed">
+                        Residents will enjoy world-class amenities including a private beach, state-of-the-art gym,
+                        infinity pool, and direct access to the promenade lined with luxury boutiques and gourmet
+                        dining.
+                    </p>
+                </div>
+
+                <div class="mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-heading text-text-primary mb-6">Amenities</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="flex items-center gap-3 text-text-secondary">
+                            <i data-lucide="waves" class="w-5 h-5 text-accent"></i> Swimming Pool
+                        </div>
+                        <div class="flex items-center gap-3 text-text-secondary">
+                            <i data-lucide="dumbbell" class="w-5 h-5 text-accent"></i> Gym
+                        </div>
+                        <div class="flex items-center gap-3 text-text-secondary">
+                            <i data-lucide="utensils" class="w-5 h-5 text-accent"></i> Restaurants
+                        </div>
+                        <div class="flex items-center gap-3 text-text-secondary">
+                            <i data-lucide="shopping-bag" class="w-5 h-5 text-accent"></i> Retail Outlets
+                        </div>
+                        <div class="flex items-center gap-3 text-text-secondary">
+                            <i data-lucide="car" class="w-5 h-5 text-accent"></i> Parking
+                        </div>
+                        <div class="flex items-center gap-3 text-text-secondary">
+                            <i data-lucide="shield" class="w-5 h-5 text-accent"></i> 24/7 Security
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl font-heading text-text-primary mb-6">Gallery</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+                            class="w-full h-64 object-cover rounded-sm hover:opacity-90 transition-opacity cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1600596542815-27b88e32e29c?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-64 object-cover rounded-sm hover:opacity-90 transition-opacity cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1613490493576-2f503710001d?q=80&w=2069&auto=format&fit=crop"
+                            class="w-full h-64 object-cover rounded-sm hover:opacity-90 transition-opacity cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?q=80&w=2073&auto=format&fit=crop"
+                            class="w-full h-64 object-cover rounded-sm hover:opacity-90 transition-opacity cursor-pointer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-secondary p-8 rounded-sm sticky top-32 shadow-lg" data-aos="fade-left">
+                    <h3 class="text-2xl font-heading text-text-primary mb-6">Register Interest</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-text-secondary mb-1">Name</label>
+                            <input type="text"
+                                class="w-full bg-white border border-gray-200 p-3 text-text-primary focus:border-accent outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-text-secondary mb-1">Email</label>
+                            <input type="email"
+                                class="w-full bg-white border border-gray-200 p-3 text-text-primary focus:border-accent outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-text-secondary mb-1">Phone</label>
+                            <input type="tel"
+                                class="w-full bg-white border border-gray-200 p-3 text-text-primary focus:border-accent outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label
+                                class="block text-xs uppercase tracking-wider text-text-secondary mb-1">Message</label>
+                            <textarea rows="4"
+                                class="w-full bg-white border border-gray-200 p-3 text-text-primary focus:border-accent outline-none transition-colors"></textarea>
+                        </div>
+                        <button class="btn-primary w-full py-4 text-white">Enquire Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg pt-24 pb-10 border-t border-white/5 text-white">
+        <div class="container mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div>
+                <a href="index.html" class="flex items-center gap-3 mb-8">
+                    <img src="./assets/icon.png" alt="LuxPrimeEstate Logo" class="h-8 w-auto grayscale brightness-200">
+                    <span class="font-heading text-3xl font-bold tracking-wider">
+                        LuxPrime<span class="text-accent">Estate</span>
+                    </span>
+                </a>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">
+                    Your trusted partner in finding the most exclusive off-plan properties and luxury real estate in
+                    Dubai and Spain.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-all"><i
+                            data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-all"><i
+                            data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-all"><i
+                            data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-heading text-xl font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="properties.html" class="hover:text-accent transition-colors">Properties</a></li>
+                    <li><a href="secondary-market-properties.html" class="hover:text-accent transition-colors">Secondary
+                            Market</a></li>
+                    <li><a href="off-plan-properties.html" class="hover:text-accent transition-colors">Off-Plan</a></li>
+                    <li><a href="pre-sale.html" class="hover:text-accent transition-colors">Pre-Sale</a></li>
+                    <li><a href="added-value.html" class="hover:text-accent transition-colors">Added Value</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading text-xl mb-8">Explore</h4>
+                <ul class="space-y-4 text-white/60 text-sm">
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Apartments</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Villas</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Penthouses</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Townhouses</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading text-xl mb-8">Contact Us</h4>
+                <ul class="space-y-6 text-white/60 text-sm">
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-accent mt-1"></i>
+                        <span>Dubai, United Arab Emirates</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="phone" class="w-5 h-5 text-accent mt-1"></i>
+                        <span>+971 50 123 4567</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="mail" class="w-5 h-5 text-accent mt-1"></i>
+                        <span>info@luxprimeestate.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="container mx-auto px-8 border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs">
+            <div>&copy; 2024 LuxPrimeEstate. All rights reserved.</div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

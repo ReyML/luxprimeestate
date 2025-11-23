@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secondary Market Properties | LuxPrimeEstate</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link href="./dist/output.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-secondary text-text-primary font-body antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-transparent">
+        <div class="container mx-auto px-8 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="./assets/icon.png" alt="LuxPrimeEstate Logo"
+                    class="h-12 w-auto transition-transform duration-500 group-hover:scale-110">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Home</a>
+                <div class="relative group">
+                    <a href="properties.html"
+                        class="text-sm font-medium text-accent uppercase tracking-wider flex items-center gap-1">
+                        Properties <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">All Properties</a>
+                        <a href="secondary-market-properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Secondary Market</a>
+                        <a href="off-plan-properties.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Off-Plan</a>
+                    </div>
+                </div>
+                <a href="pre-sale.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Pre-Sale</a>
+                <a href="added-value.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Added
+                    Value</a>
+                <a href="blog.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Blog</a>
+                <a href="contact.html"
+                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-accent transition-colors">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden"
+            id="mobile-menu">
+            <div class="flex flex-col h-full pt-24 px-6 gap-6">
+                <a href="index.html" class="text-2xl font-heading font-bold text-primary">Home</a>
+                <a href="properties.html" class="text-2xl font-heading font-bold text-accent">Properties</a>
+                <a href="secondary-market-properties.html" class="text-lg font-body text-text-secondary pl-4">Secondary
+                    Market</a>
+                <a href="off-plan-properties.html" class="text-lg font-body text-text-secondary pl-4">Off-Plan</a>
+                <a href="pre-sale.html" class="text-2xl font-heading font-bold text-primary">Pre-Sale</a>
+                <a href="added-value.html" class="text-2xl font-heading font-bold text-primary">Added Value</a>
+                <a href="blog.html" class="text-2xl font-heading font-bold text-primary">Blog</a>
+                <a href="contact.html" class="text-2xl font-heading font-bold text-primary">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] w-full flex items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600596542815-27bfef401010?q=80&w=2075&auto=format&fit=crop"
+                alt="Secondary Market Properties" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto pt-20" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-heading text-white mb-6">Secondary <span
+                    class="text-accent italic">Market</span></h1>
+            <p class="text-xl text-white/90 font-light tracking-wide max-w-2xl mx-auto">
+                Exclusive ready-to-move-in properties in Dubai's most prestigious communities.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-10 bg-white border-b border-gray-100 sticky top-[80px] z-40 shadow-sm">
+        <div class="container mx-auto px-8 flex flex-wrap gap-4 justify-center md:justify-between items-center">
+            <div class="flex gap-4 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
+                <button
+                    class="px-6 py-2 bg-accent text-white rounded-full text-sm uppercase tracking-wider font-bold shadow-md transition-transform hover:scale-105">All</button>
+                <button
+                    class="px-6 py-2 bg-secondary text-text-secondary hover:bg-accent/10 hover:text-accent rounded-full text-sm uppercase tracking-wider transition-colors border border-transparent hover:border-accent/20">Villas</button>
+                <button
+                    class="px-6 py-2 bg-secondary text-text-secondary hover:bg-accent/10 hover:text-accent rounded-full text-sm uppercase tracking-wider transition-colors border border-transparent hover:border-accent/20">Apartments</button>
+                <button
+                    class="px-6 py-2 bg-secondary text-text-secondary hover:bg-accent/10 hover:text-accent rounded-full text-sm uppercase tracking-wider transition-colors border border-transparent hover:border-accent/20">Penthouses</button>
+            </div>
+            <div class="flex items-center gap-2 text-text-secondary text-sm">
+                <span>Sort by:</span>
+                <div class="relative">
+                    <select
+                        class="appearance-none bg-transparent border-none font-bold text-text-primary focus:ring-0 cursor-pointer pr-8">
+                        <option>Newest Listed</option>
+                        <option>Price: High to Low</option>
+                        <option>Price: Low to High</option>
+                    </select>
+                    <i data-lucide="chevron-down"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-accent"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Property Card 1 -->
+                <div class="group cursor-pointer" data-aos="fade-up"
+                    onclick="window.location.href='property-details.html'">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop"
+                            alt="Luxury Villa"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs uppercase tracking-widest font-bold shadow-lg">
+                            For Sale
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-heading text-lg flex items-center gap-2">View Details <i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i></p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-heading text-text-primary mb-2 group-hover:text-accent transition-colors">
+                        Palm Jumeirah Signature Villa
+                    </h3>
+                    <p class="text-text-secondary mb-4 font-light flex items-center gap-1"><i data-lucide="map-pin"
+                            class="w-3 h-3"></i> Palm Jumeirah, Dubai</p>
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span class="text-xl font-bold text-text-primary">AED 45,000,000</span>
+                        <div class="flex gap-4 text-text-secondary text-sm">
+                            <span class="flex items-center gap-1" title="Bedrooms"><i data-lucide="bed"
+                                    class="w-4 h-4"></i> 5</span>
+                            <span class="flex items-center gap-1" title="Bathrooms"><i data-lucide="bath"
+                                    class="w-4 h-4"></i> 6</span>
+                            <span class="flex items-center gap-1" title="Area"><i data-lucide="maximize"
+                                    class="w-4 h-4"></i> 7,000
+                                sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100"
+                    onclick="window.location.href='property-details.html'">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+                            alt="Downtown Penthouse"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs uppercase tracking-widest font-bold shadow-lg">
+                            For Sale
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-heading text-lg flex items-center gap-2">View Details <i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i></p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-heading text-text-primary mb-2 group-hover:text-accent transition-colors">
+                        Downtown Sky Penthouse
+                    </h3>
+                    <p class="text-text-secondary mb-4 font-light flex items-center gap-1"><i data-lucide="map-pin"
+                            class="w-3 h-3"></i> Downtown Dubai</p>
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span class="text-xl font-bold text-text-primary">AED 28,500,000</span>
+                        <div class="flex gap-4 text-text-secondary text-sm">
+                            <span class="flex items-center gap-1" title="Bedrooms"><i data-lucide="bed"
+                                    class="w-4 h-4"></i> 4</span>
+                            <span class="flex items-center gap-1" title="Bathrooms"><i data-lucide="bath"
+                                    class="w-4 h-4"></i> 5</span>
+                            <span class="flex items-center gap-1" title="Area"><i data-lucide="maximize"
+                                    class="w-4 h-4"></i> 5,200
+                                sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200"
+                    onclick="window.location.href='property-details.html'">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1984&auto=format&fit=crop"
+                            alt="Emirates Hills Mansion"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs uppercase tracking-widest font-bold shadow-lg">
+                            Exclusive
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-heading text-lg flex items-center gap-2">View Details <i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i></p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-heading text-text-primary mb-2 group-hover:text-accent transition-colors">
+                        Emirates Hills Golf Mansion
+                    </h3>
+                    <p class="text-text-secondary mb-4 font-light flex items-center gap-1"><i data-lucide="map-pin"
+                            class="w-3 h-3"></i> Emirates Hills, Dubai</p>
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span class="text-xl font-bold text-text-primary">AED 85,000,000</span>
+                        <div class="flex gap-4 text-text-secondary text-sm">
+                            <span class="flex items-center gap-1" title="Bedrooms"><i data-lucide="bed"
+                                    class="w-4 h-4"></i> 7</span>
+                            <span class="flex items-center gap-1" title="Bathrooms"><i data-lucide="bath"
+                                    class="w-4 h-4"></i> 9</span>
+                            <span class="flex items-center gap-1" title="Area"><i data-lucide="maximize"
+                                    class="w-4 h-4"></i> 15,000
+                                sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="group cursor-pointer" data-aos="fade-up"
+                    onclick="window.location.href='property-details.html'">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                            alt="Dubai Hills Estate"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs uppercase tracking-widest font-bold shadow-lg">
+                            New Listing
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-heading text-lg flex items-center gap-2">View Details <i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i></p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-heading text-text-primary mb-2 group-hover:text-accent transition-colors">
+                        Dubai Hills Modern Villa
+                    </h3>
+                    <p class="text-text-secondary mb-4 font-light flex items-center gap-1"><i data-lucide="map-pin"
+                            class="w-3 h-3"></i> Dubai Hills Estate</p>
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span class="text-xl font-bold text-text-primary">AED 32,000,000</span>
+                        <div class="flex gap-4 text-text-secondary text-sm">
+                            <span class="flex items-center gap-1" title="Bedrooms"><i data-lucide="bed"
+                                    class="w-4 h-4"></i> 6</span>
+                            <span class="flex items-center gap-1" title="Bathrooms"><i data-lucide="bath"
+                                    class="w-4 h-4"></i> 7</span>
+                            <span class="flex items-center gap-1" title="Area"><i data-lucide="maximize"
+                                    class="w-4 h-4"></i> 8,500
+                                sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100"
+                    onclick="window.location.href='property-details.html'">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+                            alt="Jumeirah Golf Estates"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs uppercase tracking-widest font-bold shadow-lg">
+                            For Sale
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-heading text-lg flex items-center gap-2">View Details <i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i></p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-heading text-text-primary mb-2 group-hover:text-accent transition-colors">
+                        Jumeirah Golf Estates Villa
+                    </h3>
+                    <p class="text-text-secondary mb-4 font-light flex items-center gap-1"><i data-lucide="map-pin"
+                            class="w-3 h-3"></i> Jumeirah Golf Estates</p>
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span class="text-xl font-bold text-text-primary">AED 22,000,000</span>
+                        <div class="flex gap-4 text-text-secondary text-sm">
+                            <span class="flex items-center gap-1" title="Bedrooms"><i data-lucide="bed"
+                                    class="w-4 h-4"></i> 5</span>
+                            <span class="flex items-center gap-1" title="Bathrooms"><i data-lucide="bath"
+                                    class="w-4 h-4"></i> 6</span>
+                            <span class="flex items-center gap-1" title="Area"><i data-lucide="maximize"
+                                    class="w-4 h-4"></i> 6,200
+                                sqft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200"
+                    onclick="window.location.href='property-details.html'">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop"
+                            alt="Blue Waters Apartment"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute top-4 left-4 bg-accent text-white px-4 py-1 text-xs uppercase tracking-widest font-bold shadow-lg">
+                            Sea View
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-heading text-lg flex items-center gap-2">View Details <i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i></p>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-heading text-text-primary mb-2 group-hover:text-accent transition-colors">
+                        Bluewaters Island Apartment
+                    </h3>
+                    <p class="text-text-secondary mb-4 font-light flex items-center gap-1"><i data-lucide="map-pin"
+                            class="w-3 h-3"></i> Bluewaters Island</p>
+                    <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span class="text-xl font-bold text-text-primary">AED 12,500,000</span>
+                        <div class="flex gap-4 text-text-secondary text-sm">
+                            <span class="flex items-center gap-1" title="Bedrooms"><i data-lucide="bed"
+                                    class="w-4 h-4"></i> 3</span>
+                            <span class="flex items-center gap-1" title="Bathrooms"><i data-lucide="bath"
+                                    class="w-4 h-4"></i> 4</span>
+                            <span class="flex items-center gap-1" title="Area"><i data-lucide="maximize"
+                                    class="w-4 h-4"></i> 2,800
+                                sqft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-20 gap-4">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-text-secondary hover:border-accent hover:text-accent transition-colors"><i
+                        data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-accent text-white shadow-lg">1</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-text-secondary hover:border-accent hover:text-accent transition-colors">2</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-text-secondary hover:border-accent hover:text-accent transition-colors">3</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-text-secondary hover:border-accent hover:text-accent transition-colors"><i
+                        data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg pt-24 pb-10 border-t border-white/5 text-white">
+        <div class="container mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div>
+                <a href="index.html" class="flex items-center gap-3 mb-8">
+                    <img src="./assets/icon.png" alt="LuxPrimeEstate Logo" class="h-8 w-auto grayscale brightness-200">
+                    <span class="font-heading text-3xl font-bold tracking-wider">
+                        LuxPrime<span class="text-accent">Estate</span>
+                    </span>
+                </a>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">
+                    Your trusted partner in finding the most exclusive off-plan properties and luxury real estate in
+                    Dubai and Spain.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-all"><i
+                            data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-all"><i
+                            data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-all"><i
+                            data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-heading text-xl mb-8">Quick Links</h4>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="properties.html" class="hover:text-accent transition-colors">Properties</a></li>
+                    <li><a href="secondary-market-properties.html" class="hover:text-accent transition-colors">Secondary
+                            Market</a></li>
+                    <li><a href="off-plan-properties.html" class="hover:text-accent transition-colors">Off-Plan</a></li>
+                    <li><a href="pre-sale.html" class="hover:text-accent transition-colors">Pre-Sale</a></li>
+                    <li><a href="added-value.html" class="hover:text-accent transition-colors">Added Value</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading text-xl mb-8">Explore</h4>
+                <ul class="space-y-4 text-white/60 text-sm">
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Apartments</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Villas</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Penthouses</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors flex items-center gap-2"><i
+                                data-lucide="chevron-right" class="w-3 h-3"></i> Townhouses</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading text-xl mb-8">Contact Us</h4>
+                <ul class="space-y-6 text-white/60 text-sm">
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-accent mt-1"></i>
+                        <span>Dubai, United Arab Emirates</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="phone" class="w-5 h-5 text-accent mt-1"></i>
+                        <span>+971 50 123 4567</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="mail" class="w-5 h-5 text-accent mt-1"></i>
+                        <span>info@luxprimeestate.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="container mx-auto px-8 border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs">
+            <div>&copy; 2024 LuxPrimeEstate. All rights reserved.</div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>
