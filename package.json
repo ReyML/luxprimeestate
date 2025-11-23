@@ -1,13 +1,13 @@
 {
   "name": "luxprimeestate",
   "version": "1.0.0",
-  "description": "",
+  "description": "LuxPrimeEstate - Premium Real Estate Platform",
   "main": "index.js",
   "scripts": {
+    "start": "npx concurrently \"npm run watch\" \"npm run serve\"",
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
     "serve": "npx serve .",
-    "start": "npx concurrently \"npm run watch\" \"npm run serve\""
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css"
   },
   "keywords": [],
   "author": "",
