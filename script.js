@@ -15,14 +15,29 @@ const headerLogoText = document.getElementById('header-logo-text');
 const navLinks = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
+    const logoImg = header.querySelector('img');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
     if (window.scrollY > 50) {
         // Scrolled State: White Background, Dark Text
         header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-4');
-        header.classList.remove('py-6', 'border-transparent');
+        header.classList.remove('py-6', 'border-transparent', 'text-white');
+        header.classList.add('text-text-primary');
         
         if (headerLogoText) {
             headerLogoText.classList.remove('text-white');
             headerLogoText.classList.add('text-text-primary');
+        }
+
+        // Logo image handling
+        if (logoImg) {
+            logoImg.classList.remove('invert');
+            logoImg.classList.add('brightness-0');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.classList.remove('text-white');
+            mobileMenuBtn.classList.add('text-text-primary');
         }
         
         navLinks.forEach(link => {
@@ -31,12 +46,21 @@ window.addEventListener('scroll', () => {
         });
     } else {
         // Top State: Transparent Background, White Text
-        header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-4');
-        header.classList.add('py-6', 'border-transparent');
+        header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-4', 'text-text-primary');
+        header.classList.add('py-6', 'border-transparent', 'text-white');
         
         if (headerLogoText) {
             headerLogoText.classList.add('text-white');
             headerLogoText.classList.remove('text-text-primary');
+        }
+
+        if (logoImg) {
+            logoImg.classList.add('brightness-0', 'invert');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.classList.add('text-white');
+            mobileMenuBtn.classList.remove('text-text-primary');
         }
         
         navLinks.forEach(link => {
