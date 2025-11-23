@@ -7,7 +7,8 @@
     <title>Blog & Insights | LuxPrimeEstate</title>
     <meta name="description"
         content="Expert insights, market trends, and luxury lifestyle articles from LuxPrimeEstate.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link href="./dist/output.css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -16,114 +17,88 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a1a1a',
-                        secondary: '#f5f5f5',
-                        accent: '#c5a059',
-                        'accent-dark': '#b08d48',
-                        'text-primary': '#333333',
-                        'text-secondary': '#666666',
-                        'dark-bg': '#0f0f0f',
-                    },
-                    fontFamily: {
-                        heading: ['"Playfair Display"', 'serif'],
-                        body: ['Lato', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
 </head>
 
 <body class="font-body text-text-primary antialiased overflow-x-hidden">
 
-    <!-- Header (Reused) -->
-    <header class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm"
-        id="main-header">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div
-                    class="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-sm group-hover:bg-accent transition-colors duration-300">
-                    <span class="font-heading font-bold text-xl">L</span>
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-transparent text-white">
+        <div class="container mx-auto px-8 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div id="header-logo-text"
+                    class="font-heading text-2xl font-bold tracking-wider group-hover:text-accent transition-colors">
+                    LuxPrime<span class="text-accent">Estate</span>
                 </div>
             </a>
 
+            <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-8">
                 <a href="index.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Home</a>
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Home</a>
                 <div class="relative group">
                     <a href="properties.html"
-                        class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider flex items-center gap-1">
+                        class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider flex items-center gap-1 drop-shadow-md">
                         Properties <i data-lucide="chevron-down" class="w-4 h-4"></i>
                     </a>
                     <div
-                        class="absolute top-full left-0 w-48 bg-white shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        class="absolute top-full left-0 w-48 bg-white text-text-primary shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 rounded-sm">
                         <a href="properties.html"
-                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">All Properties</a>
+                            class="block px-4 py-3 text-sm hover:bg-secondary hover:text-accent border-b border-gray-100 last:border-0">All
+                            Properties</a>
                         <a href="secondary-market-properties.html"
-                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Secondary Market</a>
+                            class="block px-4 py-3 text-sm hover:bg-secondary hover:text-accent border-b border-gray-100 last:border-0">Secondary
+                            Market</a>
                         <a href="off-plan-properties.html"
-                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Off-Plan</a>
+                            class="block px-4 py-3 text-sm hover:bg-secondary hover:text-accent">Off-Plan</a>
                     </div>
                 </div>
                 <a href="pre-sale.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Pre-Sale</a>
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Pre-Sale</a>
                 <a href="added-value.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Added
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Added
                     Value</a>
-                <a href="blog.html" class="text-sm font-medium text-accent uppercase tracking-wider">Blog</a>
+                <a href="blog.html"
+                    class="nav-link text-sm font-bold text-accent uppercase tracking-wider drop-shadow-md">Blog</a>
                 <a href="contact.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Contact</a>
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Contact</a>
             </nav>
 
-            <button class="md:hidden text-primary hover:text-accent transition-colors" id="mobile-menu-btn">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-accent transition-colors">
+                <i data-lucide="menu" class="w-8 h-8 drop-shadow-md"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden"
-            id="mobile-menu">
-            <div class="flex flex-col h-full pt-24 px-6 gap-6">
-                <a href="index.html" class="text-2xl font-heading font-bold text-primary">Home</a>
-                <a href="properties.html" class="text-2xl font-heading font-bold text-primary">Properties</a>
-                <a href="secondary-market-properties.html" class="text-lg font-body text-text-secondary pl-4">Secondary
-                    Market</a>
-                <a href="off-plan-properties.html" class="text-lg font-body text-text-secondary pl-4">Off-Plan</a>
-                <a href="pre-sale.html" class="text-2xl font-heading font-bold text-primary">Pre-Sale</a>
-                <a href="added-value.html" class="text-2xl font-heading font-bold text-primary">Added Value</a>
-                <a href="blog.html" class="text-2xl font-heading font-bold text-accent">Blog</a>
-                <a href="contact.html" class="text-2xl font-heading font-bold text-primary">Contact</a>
-            </div>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu"
+            class="fixed top-0 right-[-100%] w-[80%] h-screen bg-white text-text-primary shadow-2xl flex flex-col justify-center items-center gap-8 transition-all duration-500 md:hidden z-50">
+            <button id="close-menu-btn"
+                class="absolute top-6 right-8 text-text-primary hover:text-accent transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <a href="index.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Home</a>
+            <a href="properties.html"
+                class="text-xl uppercase tracking-widest font-bold hover:text-accent">Properties</a>
+            <a href="secondary-market-properties.html" class="text-lg text-text-secondary hover:text-accent">Secondary
+                Market</a>
+            <a href="off-plan-properties.html" class="text-lg text-text-secondary hover:text-accent">Off-Plan</a>
+            <a href="pre-sale.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Pre-Sale</a>
+            <a href="added-value.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Added
+                Value</a>
+            <a href="blog.html" class="text-xl uppercase tracking-widest font-bold text-accent">Blog</a>
+            <a href="contact.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Contact</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=2068&auto=format&fit=crop"
-                alt="Blog Hero" class="w-full h-full object-cover" id="hero-bg">
-            <div class="absolute inset-0 bg-black/40"></div>
-        </div>
 
-        <div class="container mx-auto px-6 relative z-10 text-center text-white">
-            <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">Insights & Trends</h1>
-            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Expert analysis on the luxury real estate market and lifestyle.
-            </p>
-        </div>
+    <div class="container mx-auto px-6 relative z-10 text-center text-white">
+        <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6" data-aos="fade-up">Insights & Trends</h1>
+        <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Expert analysis on the luxury real estate market and lifestyle.
+        </p>
+    </div>
     </section>
 
     <!-- Featured Article -->
@@ -356,49 +331,10 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('translate-x-full');
-            const icon = mobileMenu.classList.contains('translate-x-full') ? 'menu' : 'x';
-            mobileMenuBtn.innerHTML = `<i data-lucide="${icon}" class="w-6 h-6"></i>`;
-            lucide.createIcons();
-        });
-
-        // Header Scroll Effect
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-md');
-            } else {
-                header.classList.remove('shadow-md');
-            }
-        });
-
-        // Parallax Effect
-        gsap.to("#hero-bg", {
-            yPercent: 30,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
-        });
     </script>
 </body>
 

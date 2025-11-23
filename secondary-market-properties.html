@@ -23,80 +23,82 @@
 
     <!-- Header -->
     <header id="header"
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-transparent">
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-transparent text-white">
         <div class="container mx-auto px-8 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
-                <img src="./assets/icon.png" alt="LuxPrimeEstate Logo"
-                    class="h-12 w-auto transition-transform duration-500 group-hover:scale-110">
+                <div id="header-logo-text"
+                    class="font-heading text-2xl font-bold tracking-wider group-hover:text-accent transition-colors">
+                    LuxPrime<span class="text-accent">Estate</span>
+                </div>
             </a>
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-8">
                 <a href="index.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Home</a>
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Home</a>
                 <div class="relative group">
                     <a href="properties.html"
-                        class="text-sm font-medium text-accent uppercase tracking-wider flex items-center gap-1">
+                        class="nav-link text-sm font-bold text-accent uppercase tracking-wider flex items-center gap-1 drop-shadow-md">
                         Properties <i data-lucide="chevron-down" class="w-4 h-4"></i>
                     </a>
                     <div
-                        class="absolute top-full left-0 w-48 bg-white shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        class="absolute top-full left-0 w-48 bg-white text-text-primary shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 rounded-sm">
                         <a href="properties.html"
-                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">All Properties</a>
+                            class="block px-4 py-3 text-sm hover:bg-secondary hover:text-accent border-b border-gray-100 last:border-0">All
+                            Properties</a>
                         <a href="secondary-market-properties.html"
-                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Secondary Market</a>
+                            class="block px-4 py-3 text-sm hover:bg-secondary hover:text-accent border-b border-gray-100 last:border-0">Secondary
+                            Market</a>
                         <a href="off-plan-properties.html"
-                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-accent">Off-Plan</a>
+                            class="block px-4 py-3 text-sm hover:bg-secondary hover:text-accent">Off-Plan</a>
                     </div>
                 </div>
                 <a href="pre-sale.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Pre-Sale</a>
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Pre-Sale</a>
                 <a href="added-value.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Added
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Added
                     Value</a>
                 <a href="blog.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Blog</a>
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Blog</a>
                 <a href="contact.html"
-                    class="text-sm font-medium hover:text-accent transition-colors uppercase tracking-wider">Contact</a>
+                    class="nav-link text-sm font-bold hover:text-accent transition-colors uppercase tracking-wider drop-shadow-md">Contact</a>
             </nav>
 
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden text-white hover:text-accent transition-colors">
-                <i data-lucide="menu"></i>
+                <i data-lucide="menu" class="w-8 h-8 drop-shadow-md"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden"
-            id="mobile-menu">
-            <div class="flex flex-col h-full pt-24 px-6 gap-6">
-                <a href="index.html" class="text-2xl font-heading font-bold text-primary">Home</a>
-                <a href="properties.html" class="text-2xl font-heading font-bold text-accent">Properties</a>
-                <a href="secondary-market-properties.html" class="text-lg font-body text-text-secondary pl-4">Secondary
-                    Market</a>
-                <a href="off-plan-properties.html" class="text-lg font-body text-text-secondary pl-4">Off-Plan</a>
-                <a href="pre-sale.html" class="text-2xl font-heading font-bold text-primary">Pre-Sale</a>
-                <a href="added-value.html" class="text-2xl font-heading font-bold text-primary">Added Value</a>
-                <a href="blog.html" class="text-2xl font-heading font-bold text-primary">Blog</a>
-                <a href="contact.html" class="text-2xl font-heading font-bold text-primary">Contact</a>
-            </div>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu"
+            class="fixed top-0 right-[-100%] w-[80%] h-screen bg-white text-text-primary shadow-2xl flex flex-col justify-center items-center gap-8 transition-all duration-500 md:hidden z-50">
+            <button id="close-menu-btn"
+                class="absolute top-6 right-8 text-text-primary hover:text-accent transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <a href="index.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Home</a>
+            <a href="properties.html" class="text-xl uppercase tracking-widest font-bold text-accent">Properties</a>
+            <a href="secondary-market-properties.html" class="text-lg text-text-secondary hover:text-accent">Secondary
+                Market</a>
+            <a href="off-plan-properties.html" class="text-lg text-text-secondary hover:text-accent">Off-Plan</a>
+            <a href="pre-sale.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Pre-Sale</a>
+            <a href="added-value.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Added
+                Value</a>
+            <a href="blog.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Blog</a>
+            <a href="contact.html" class="text-xl uppercase tracking-widest font-bold hover:text-accent">Contact</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-[60vh] w-full flex items-center justify-center text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1600596542815-27bfef401010?q=80&w=2075&auto=format&fit=crop"
-                alt="Secondary Market Properties" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40"></div>
-        </div>
-        <div class="relative z-10 max-w-4xl mx-auto pt-20" data-aos="fade-up">
-            <h1 class="text-5xl md:text-7xl font-heading text-white mb-6">Secondary <span
-                    class="text-accent italic">Market</span></h1>
-            <p class="text-xl text-white/90 font-light tracking-wide max-w-2xl mx-auto">
-                Exclusive ready-to-move-in properties in Dubai's most prestigious communities.
-            </p>
-        </div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto pt-20" data-aos="fade-up">
+        <h1 class="text-5xl md:text-7xl font-heading text-white mb-6">Secondary <span
+                class="text-accent italic">Market</span></h1>
+        <p class="text-xl text-white/90 font-light tracking-wide max-w-2xl mx-auto">
+            Exclusive ready-to-move-in properties in Dubai's most prestigious communities.
+        </p>
+    </div>
     </section>
 
     <!-- Filter Section -->

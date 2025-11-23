@@ -14,11 +14,11 @@ const header = document.getElementById('header');
 const headerLogoText = document.getElementById('header-logo-text');
 const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
+function updateHeader() {
     if (window.scrollY > 50) {
         // Scrolled State: White Background, Dark Text
         header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-4');
-        header.classList.remove('py-6', 'border-transparent');
+        header.classList.remove('py-6', 'border-transparent', 'text-white');
         
         if (headerLogoText) {
             headerLogoText.classList.remove('text-white');
@@ -32,7 +32,7 @@ window.addEventListener('scroll', () => {
     } else {
         // Top State: Transparent Background, White Text
         header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-4');
-        header.classList.add('py-6', 'border-transparent');
+        header.classList.add('py-6', 'border-transparent', 'text-white');
         
         if (headerLogoText) {
             headerLogoText.classList.add('text-white');
@@ -44,7 +44,10 @@ window.addEventListener('scroll', () => {
             link.classList.remove('text-text-primary');
         });
     }
-});
+}
+
+window.addEventListener('scroll', updateHeader);
+window.addEventListener('load', updateHeader);
 
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
